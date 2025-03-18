@@ -4,8 +4,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Lugrasimo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <meta name="google-site-verification" content="UQ7-gyWV0R9vspC5BBHdYpg5-Kun94-1ZeYOlYL1R5E" />
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="UQ7-gyWV0R9vspC5BBHdYpg5-Kun94-1ZeYOlYL1R5E" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Emissions Research</title>
     <style>
@@ -21,7 +21,7 @@
         hr.thicc {
             height: 5px;
             background-color: #5b5b5b;
-            margin: 3em 0;
+            margin: 3em 0;x
         }
         .arrow {
             border: solid white;
@@ -838,6 +838,12 @@
             <div><img src="0/10.png"><p>Score: 4</p></div>
             <div><img src="3/10.png"><p>Score: 5</p></div>
             <div><img src="2/10.png"><p>Score: 4</p></div>
+            <p>Energy Consumption in Joules</p>
+            <div><p style="line-height:44.8px">7895.65</p></div>
+            <div><p style="line-height:44.8px">5611.86</p></div>
+            <div><p style="line-height:44.8px">2117.19</p></div>
+            <div><p style="line-height:44.8px">1672.47</p></div>
+            <div><p style="line-height:44.8px">433.10</p></div>
         </div>
         <div class="modelimgs modelimgs2" style="display:none;grid-template-columns: repeat(5, calc(100% / 5))">
             <div><h3>Deep<br>Floyd</h3></div>
@@ -1281,7 +1287,40 @@
 
         var carbonIntensityData = []; // Will be loaded from 'carbon_intensity.json'
 
-        var serverRegionOptions = []; // Will be populated after loading data
+        var serverRegionOptions = [
+    "AE", "AF", "AG", "AL", "AM", "AO", "AR", "AT", "AU-LH", "AU-NSW", "AU-NT", "AU-QLD", "AU-SA", "AU-TAS",
+    "AU-TAS-CBI", "AU-TAS-FI", "AU-TAS-KI", "AU-VIC", "AU-WA", "AU-WA-RI", "AW", "AX", "AZ", "BA", "BB", "BD",
+    "BE", "BF", "BG", "BH", "BI", "BJ", "BN", "BO", "BR-CS", "BR-N", "BR-NE", "BR-S", "BS", "BT", "BW", "BY",
+    "BZ", "CA-AB", "CA-BC", "CA-MB", "CA-NB", "CA-NL-LB", "CA-NL-NF", "CA-NS", "CA-NT", "CA-NU", "CA-ON",
+    "CA-PE", "CA-QC", "CA-SK", "CA-YT", "CD", "CF", "CG", "CH", "CI", "CL-CHP", "CL-SEA", "CL-SEM", "CL-SEN",
+    "CM", "CN", "CO", "CR", "CU", "CV", "CY", "CZ", "DE", "DJ", "DK-BHM", "DK-DK1", "DK-DK2", "DM", "DO", "DZ",
+    "EC", "EE", "EG", "EH", "ER", "ES-CE", "ES-CN-FVLZ", "ES-CN-GC", "ES-CN-HI", "ES-CN-IG", "ES-CN-LP",
+    "ES-CN-TE", "ES-IB-FO", "ES-IB-IZ", "ES-IB-MA", "ES-IB-ME", "ES-ML", "ET", "FI", "FJ", "FK", "FM", "FO-MI",
+    "FO-SI", "FR", "FR-COR", "GA", "GB", "GB-NIR", "GB-ORK", "GB-ZET", "GE", "GF", "GG", "GH", "GI", "GL", "GM",
+    "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL",
+    "IM", "IN-AN", "IN-DL", "IN-EA", "IN-HP", "IN-KA", "IN-MH", "IN-NE", "IN-NO", "IN-PB", "IN-SO", "IN-UP",
+    "IN-UT", "IN-WE", "IQ", "IQ-KUR", "IR", "IS", "IT-CNO", "IT-CSO", "IT-NO", "IT-SAR", "IT-SIC", "IT-SO", "JE",
+    "JM", "JO", "JP-CB", "JP-CG", "JP-HKD", "JP-HR", "JP-KN", "JP-KY", "JP-ON", "JP-SK", "JP-TH", "JP-TK", "KE",
+    "KG", "KH", "KM", "KP", "KR", "KW", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY",
+    "MA", "MD", "ME", "MG", "MK", "ML", "MM", "MN", "MQ", "MR", "MT", "MU", "MW", "MX-BC", "MX-BCS", "MX-CE",
+    "MX-NE", "MX-NO", "MX-NW", "MX-OC", "MX-OR", "MX-PN", "MY-EM", "MY-WM", "MZ", "NA", "NC", "NE", "NG", "NI",
+    "NL", "NO-NO1", "NO-NO2", "NO-NO3", "NO-NO4", "NO-NO5", "NP", "NZ-NZA", "NZ-NZC", "NZ-NZST", "OM", "PA",
+    "PE", "PF", "PG", "PH-LU", "PH-MI", "PH-VI", "PK", "PL", "PM", "PR", "PS", "PT", "PT-AC", "PT-MA", "PW",
+    "PY", "QA", "RE", "RO", "RS", "RU-1", "RU-2", "RU-AS", "RU-EU", "RU-FE", "RU-KGD", "RW", "SA", "SB", "SD",
+    "SE-SE1", "SE-SE2", "SE-SE3", "SE-SE4", "SG", "SI", "SJ", "SK", "SL", "SN", "SO", "SR", "SS", "ST", "SV",
+    "SY", "SZ", "TD", "TF", "TG", "TH", "TJ", "TL", "TM", "TN", "TO", "TR", "TT", "TW", "TZ", "UA", "UA-CR",
+    "UG", "US-AK", "US-AK-SEAPA", "US-CAL-BANC", "US-CAL-CISO", "US-CAL-IID", "US-CAL-LDWP", "US-CAL-TIDC",
+    "US-CAR-CPLE", "US-CAR-CPLW", "US-CAR-DUK", "US-CAR-SC", "US-CAR-SCEG", "US-CAR-YAD", "US-CENT-SPA",
+    "US-CENT-SWPP", "US-FLA-FMPP", "US-FLA-FPC", "US-FLA-FPL", "US-FLA-GVL", "US-FLA-HST", "US-FLA-JEA",
+    "US-FLA-SEC", "US-FLA-TAL", "US-FLA-TEC", "US-HI-HA", "US-HI-KA", "US-HI-KH", "US-HI-LA", "US-HI-MA",
+    "US-HI-MO", "US-HI-NI", "US-HI-OA", "US-MIDA-PJM", "US-MIDW-AECI", "US-MIDW-LGEE", "US-MIDW-MISO",
+    "US-NE-ISNE", "US-NW-AVA", "US-NW-BPAT", "US-NW-CHPD", "US-NW-DOPD", "US-NW-GCPD", "US-NW-GRID",
+    "US-NW-IPCO", "US-NW-NEVP", "US-NW-NWMT", "US-NW-PACE", "US-NW-PACW", "US-NW-PGE", "US-NW-PSCO",
+    "US-NW-PSEI", "US-NW-SCL", "US-NW-TPWR", "US-NW-WACM", "US-NW-WAUW", "US-NY-NYIS", "US-SE-SEPA",
+    "US-SE-SOCO", "US-SW-AZPS", "US-SW-EPE", "US-SW-PNM", "US-SW-SRP", "US-SW-TEPC", "US-SW-WALC",
+    "US-TEN-TVA", "US-TEX-ERCO", "UY", "UZ", "VC", "VE", "VI", "VN-C", "VN-N", "VN-S", "VU", "WS", "XK", "XX",
+    "YE", "YT", "ZA", "ZM", "ZW"
+]; // Will be populated after loading data
 
         // Temporal options from 0 to 23
         var temporalOptions = [];
@@ -6821,11 +6860,6 @@
             "ZA": 715
         }
     }];
-
-                    // Extract server region options from the first data entry
-                    if (carbonIntensityData.length > 0) {
-                        serverRegionOptions = Object.keys(carbonIntensityData[0].data);
-                    }
                     fetch("https://api.electricitymap.org/v3/carbon-intensity/latest")
                     .then(response => response.json())
                     .then(data =>{
