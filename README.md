@@ -55,7 +55,7 @@ We analyze the energy usage of five open-source models across two GPU types (NVI
 ### Temporal Shifting
 - In regions like California and Texas, **shifting to midday hours** cut emissions by **up to 77%**.
 - Effectiveness varied by location; New York showed minimal benefit due to a flat carbon intensity curve.
-- 
+
 ---
 
 ## Recommendations
